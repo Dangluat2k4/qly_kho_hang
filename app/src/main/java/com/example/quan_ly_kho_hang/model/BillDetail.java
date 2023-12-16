@@ -6,15 +6,30 @@ public class BillDetail {
     int billID;
     String quantity;// so luong san pham
     String createdDate;
+    String price;
 
     public BillDetail() {
     }
 
-    public BillDetail(int id, int billID, String quantity, String createdDate) {
-        this.id = id;
+    public BillDetail(int billID, String quantity, String createdDate) {
         this.billID = billID;
         this.quantity = quantity;
         this.createdDate = createdDate;
+    }
+
+    public BillDetail(int billID, String quantity, String createdDate, String price) {
+        this.billID = billID;
+        this.quantity = quantity;
+        this.createdDate = createdDate;
+        this.price = price;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public int getId() {

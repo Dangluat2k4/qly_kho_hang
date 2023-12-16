@@ -52,7 +52,7 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
         this.context = context;
         this.list = list;
         this.imageSelectedListener = imageSelectedListener;
-        this.IIMG = IIMG; // Thêm dòng này
+        this.IIMG = IIMG;
         userDao = new userDao(context);
     }
     @NonNull
@@ -120,7 +120,7 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtUser, txtNumberPhone, txtPosition, txtProfile;
-        ImageButton IBAvatar;
+        ImageView IBAvatar;
         Button btnUDUser, btnDeleteUser;
 
         public ViewHolder(@NonNull View itemView) {

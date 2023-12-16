@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/IBAvatar"
             android:layout_width="160sp"
             android:layout_height="160sp"

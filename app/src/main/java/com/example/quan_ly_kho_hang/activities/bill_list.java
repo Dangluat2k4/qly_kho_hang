@@ -1,6 +1,7 @@
 package com.example.quan_ly_kho_hang.activities;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -35,10 +37,13 @@ import com.example.quan_ly_kho_hang.model.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class bill_list extends Fragment {
+    Calendar calendar = Calendar.getInstance();
     RecyclerView recyclerView;
     FloatingActionButton fltAddBill;
     billAdapter adapter;
@@ -93,6 +98,12 @@ public class bill_list extends Fragment {
         btnACancel = view.findViewById(R.id.btnACancel);
         txtSL = view.findViewById(R.id.txtSL);
         txtCreateBy = view.findViewById(R.id.txtCreateBy);
+        edtACreatedDateB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                themlich();
+            }
+        });
         SimpleAdapter simpleAdapter = new SimpleAdapter(
                 getContext(),
                 getPR(),
@@ -180,5 +191,30 @@ public class bill_list extends Fragment {
             listHM.add(hs);
         }
         return listHM;
+    }
+    protected void themlich() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String ngay = "";
+                String thang = "";
+                if (dayOfMonth < 10) {
+                    ngay = "0" + dayOfMonth;
+                } else {
+                    ngay = String.valueOf(dayOfMonth);
+                }
+                if ((month + 1) < 10) {
+                    thang = "0" + (month + 1);
+                } else {
+                    thang = String.valueOf(month + 1);
+                }
+                edtACreatedDateB.setText(year + "/" + (thang) + "/" + ngay);
+            }
+        },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+        );
+        datePickerDialog.show();
     }
 }

@@ -185,7 +185,10 @@ public class productList extends Fragment implements OnImageSelectListtenerPR {
                 if(!(IIMGPR == null)){
                     IIMGPR.setImageBitmap(bitmap);
                 }
-                IAIMGPR.setImageBitmap(bitmap);
+                else {
+                    IAIMGPR.setImageBitmap(bitmap);
+                }
+
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }

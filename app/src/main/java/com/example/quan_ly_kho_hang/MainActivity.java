@@ -16,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.quan_ly_kho_hang.activities.admin.create_product;
 import com.example.quan_ly_kho_hang.activities.admin.create_user;
+import com.example.quan_ly_kho_hang.activities.admin.doanhthu;
 import com.example.quan_ly_kho_hang.activities.admin.frm_billDetail;
 import com.example.quan_ly_kho_hang.activities.admin.productList;
 import com.example.quan_ly_kho_hang.activities.admin.userList;
@@ -67,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.statistic) {
                     statisic statisic = new statisic();
                     replaceFrg(statisic);
+                }
+                if (item.getItemId() == R.id.doanhThu) {
+                    doanhthu doanhthu = new doanhthu();
+                    replaceFrg(doanhthu);
                 }
                 if (item.getItemId() == R.id.log_out) {
                     Intent  intent = new Intent(MainActivity.this, login.class);

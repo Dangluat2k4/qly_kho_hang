@@ -9,6 +9,9 @@
         android:title="thống kê "
         android:icon="@drawable/trend"
         />
+    <item android:id="@+id/doanhThu"
+        android:title="doanh thu"
+        android:icon="@drawable/baseline_currency_bitcoin_24"/>
     <item android:id="@+id/log_out"
         android:title="Đăng xuất"
         android:icon="@drawable/people"

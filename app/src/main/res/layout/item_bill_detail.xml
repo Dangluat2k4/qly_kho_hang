@@ -38,7 +38,12 @@
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:background="@drawable/khung" />
-
+        <TextView
+            android:id="@+id/txtPriceDT"
+            android:layout_width="390dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/khung" />
     </LinearLayout>
 
     <LinearLayout

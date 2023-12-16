@@ -106,6 +106,7 @@ public class userList extends Fragment implements OnImageSelectedListener {
         edtCreateDate = view.findViewById(R.id.edtCreateDate);
         edtAddLastAction = view.findViewById(R.id.edtAddLastAction);
         ibAddIMG = view.findViewById(R.id.ibAddIMG);
+        addIIMG = view.findViewById(R.id.addIIMG);
         ibAddIMG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,7 +117,7 @@ public class userList extends Fragment implements OnImageSelectedListener {
                 addIIMG.setVisibility(View.VISIBLE);
             }
         });
-        addIIMG = view.findViewById(R.id.addIIMG);
+
         btnAddUser = view.findViewById(R.id.btnAddUser);
         btnAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,15 +170,16 @@ public class userList extends Fragment implements OnImageSelectedListener {
                 if(!(IIMG == null)){
                     IIMG.setImageBitmap(bitmap);
                 }
-                addIIMG.setImageBitmap(bitmap);
+                else {
+                    addIIMG.setImageBitmap(bitmap);
+                }
+
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-
     @Override
     public void onImageSelected(User user, ImageView IIMG) {
         if (IIMG == null) {
